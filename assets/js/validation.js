@@ -1,13 +1,4 @@
 
-function errorMessages(){
-
-
-}
-function messages(){
-  document.get
-  
-
-}
 
 function validateForm()
 {
