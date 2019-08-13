@@ -1,49 +1,39 @@
-
-
 function validateForm()
 {
-
-  var f=false;
+   // counter initialise
+      var f=false;
   // for validating full name  
           var name = document.getElementById("fname").value;
           if (name == ""  ) 
           {
-              document.getElementById("nameErr").innerHTML = " * Please Fill Your Full Name";
+              errMessage("nameErr"," * Please Fill Your Full Name");
              f ++;
           }
           else{
-                document.getElementById("nameErr").innerHTML = "";
-                
+                errMessage("nameErr","");
                 }
-
-                
-                
- 
+  
 // for validating emailid 
           var emailid = document.getElementById("email").value;
           if (emailid == "") 
           {
-            document.getElementById("emailErr").innerHTML = " * Please Fill Your Email";
+            errMessage("emailErr"," * Please Fill Your Email");
             f ++;
           }
           else{
-                  document.getElementById("emailErr").innerHTML = "";
-                  
-              }
-
+                  errMessage("emailErr", "");
+          }
 
 // for validating mobile no.
           var mob = document.getElementById("mobile").value;
 
           if (mob == "" || mob.length != 10 || isNaN[mob]) 
           {
-                document.getElementById("mobileErr").innerHTML = " * Please Fill Your Mobile No. correctly";
+                errMessage("mobileErr"," * Please Fill Your Mobile No. correctly");
                 f++;  
               }
             else{
-                    document.getElementById("mobileErr").innerHTML = "";
-                    
-                   
+                    errMessage("mobileErr", "");
                 }        
             
 // for validating D.O.B
@@ -51,100 +41,82 @@ function validateForm()
           
             if(dob == "")
             {
-                document.getElementById("dobErr").innerHTML = " * Please Fill Your Date of Birth";
+                errMessage("dobErr"," * Please Fill Your Date of Birth");
                 f ++;
               }
               else{
-                      document.getElementById("dobErr").innerHTML = "";
-                      
-                      
+                      errMessage("dobErr", "");   
                     }
 
 // for validating Address field 1  
-
           var address1 = document.getElementById("addr1").value;
           if (address1 == "") 
           {
-
-              document.getElementById("addr1Err").innerHTML = " * Please Fill Your Address field correctly";
+              errMessage("addr1Err"," * Please Fill Your Address field correctly");
               f ++;
           }
             else{
-                    document.getElementById("addr1Err").innerHTML = "";
-                    
-                    
+                    errMessage("addr1Err", ""); 
                 }
 
 // for validating city
-
             var city = document.getElementById("city").value;
             if ( city == "Select City")
               {
-                  document.getElementById("cityErr").innerHTML = " * Please Select Your City ";
+                  errMessage("cityErr"," * Please Select Your City ");
                   f ++;
               }else{
-                        document.getElementById("cityErr").innerHTML = "";
-                        
-                        
+                        errMessage("cityErr","");    
                     }
+  
 // for validating state
             var state = document.getElementById("state").value;
             if ( state == "Select State")
               {
-                    document.getElementById("stateErr").innerHTML = " * Please Select Your State ";
+                    errMessage("stateErr"," * Please Select Your State ");
                     f ++;
               }else{
-                      document.getElementById("stateErr").innerHTML = "";
-                      
-                      
+                      errMessage("stateErr","");
                     }
+  
 // for validating country
             var country = document.getElementById("country").value;
             if ( country == "Select Country")
             {
-                  errMessage("countryErr","* Please Select Your Country ");
+                  errMessage("countryErr"," * Please Select Your Country ");
                   f ++;
               }else{
-                      errMessage("countryErr", "");
-                      
-                      
+                      errMessage("countryErr","");   
                     }
 
 // for validating Gender
             var gen = document.forms["RegForm"]["Gender"].value;
             if (gen == "")
             {
-                errMessage("genderErr" , " * Please Select Your Gender");
+                errMessage("genderErr"," * Please Select Your Gender");
                 f ++;
             }else{
-                       errMessage("genderErr" , "");
-            }
+                      errMessage("genderErr","");
+                 }
                      
-  // only to get f counter value                
-                        alert(f +" Errors");
-
-
+             //Checking counter conditions
                   if(f > 0){
                       return  f= false;
                       
                   }else  {
                     return f= true;
                   
-                  }
-                  
-                
- 
-                    
-
+                  }             
 }
+ // for printing errors.
+             function errMessage(id , msg)
+               {
+                  document.getElementById(id).innerHTML = msg;
+                }
 
-function errMessage(id,msg){
-  document.getElementById(id).innerHTML= msg;
-}
-
-
-function resetForm(){
-
+// reset button code
+function resetForm()
+{
   var reset = document.getElementsByClassName("error")
   for (var i=0;i< reset.length;i++)
   {
@@ -152,4 +124,3 @@ function resetForm(){
   }
 
 }
-
