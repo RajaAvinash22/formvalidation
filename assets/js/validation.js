@@ -118,9 +118,9 @@ function validateForm()
                 f ++;
             }else{
                       document.getElementById("genderErr").innerHTML = "";
+            }
                      
-                     
-  // only to get f counter value                }
+  // only to get f counter value                
                         alert(f +" Errors");
 
 
