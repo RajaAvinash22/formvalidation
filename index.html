@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Simple HTML Form</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/validation.js"></script>
+    </head>
+        <body>
+                <form  name="RegForm" action="#" onsubmit="event.preventDefault();return validateForm()" method="post">
+                    <h2>Employee Form</h2>
+                    <!--Emploee id-->
+                                <div class="row">
+                                        <label>Employee ID #</label>
+                                        <input type="text" name="eid" id ="emid" value="19721" disabled>
+                                        <span class="error" id="idErr"></span>
+                                </div>
+                    <!--Full Name-->          
+                            <div class="row">
+                                    <label>Full Name</label>
+                                    <input type="text" name="Name" id ="fname">
+                                    <span class="error" id="nameErr"></span>
+                                </div>
+                    <!--Email Address--> 
+                                <div class="row">
+                                    <label>Email Address</label>
+                                    <input type="email" name="Email" id ="email">
+                                    <span class="error" id="emailErr"></span>               
+                                </div>
+                    <!--Mobile Number--> 
+                                <div class="row">
+                                    <label>Mobile Number</label>
+                                    <input  type="text" name="Mobile" id = "mobile"  >
+                                    <span class="error" id="mobileErr"></span>
+                                </div>
+                    <!--Gender--> 
+                                <div class="row">
+                                    <label>Gender</label>
+                                    <div class="form-inline" >
+                                        <label><input type="radio" name="Gender"  > Male</label>
+                                        <label><input type="radio" name="Gender"  > Female</label> 
+                                        <label><input type="radio" name="Gender"   > Others</label> 
+                                    </div>
+                                    <span class="error" id="genderErr"></span>
+                                </div>
+                    <!--D.O.B--> 
+                                <div class="row">
+                                    <label>D.O.B.</label>
+                                    <input type="date" placeholder ="dd/mm/year" name="dob" id ="dob">
+                                    <span class="error" id="dobErr"></span>
+                                </div>
+                    <!--Address 1--> 
+                                <div class="row">
+                                    <label>Address1</label>
+                                    <input type="text" name="Addr1" maxlength="50" id ="addr1">
+                                    <span class="error" id="addr1Err"></span>
+                                </div>
+                    <!--Address 2--> 
+                                <div class="row">
+                                    <label>Address2</label>
+                                    <input type="text" name="Addr2" maxlength="50">
+                                    <span class="error" id="addr2Err"></span>
+                                </div>
+                    <!--City--> 
+                                <div class="row">
+                                    <label>City</label>
+                                    <select name="City" id="city">
+                                        <option>Select City</option>
+                                        <option>Jaipur</option>
+                                        <option>Jodhpur</option>
+                                        <option>Bikaner</option>
+                                        <option>Pune</option>
+                                    </select> 
+                                    <span class="error" id="cityErr"></span>
+                                </div>
+                    <!--State-->             
+                                <div class="row">
+                                    <label>State</label>
+                                    <select name="State" id="state">
+                                        <option>Select State</option>
+                                        <option>Rajasthan</option>
+                                        <option>Karnataka</option>
+                                        <option>Maharastra</option>
+                                        <option>Gujarat</option>
+                                    </select> 
+                                    <span class="error" id="stateErr"></span>
+                                </div>
+                    <!--Country-->             
+                                <div class="row">
+                                    <label>Country</label>
+                                    <select name="Country" id="country">
+                                        <option>Select Country</option>
+                                        <option>India</option>
+                                        <option>Singapore</option>
+                                        <option>United States</option>
+                                        <option>Australia</option>
+                                    </select> 
+                                    <div class="error" id="countryErr"></div>
+                                </div>
+                    <!--Reset button-->    
+                                <div class="row">
+                                    <input type="reset" value="Reset"  onclick="resetForm()">
+                                </div>
+                    <!--Submit button-->     
+                                <div class="row">
+                                    <input type="submit" value="Submit">
+                                </div>
+                </form>
+        </body>
+</html>
