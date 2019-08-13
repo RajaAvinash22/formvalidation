@@ -102,10 +102,10 @@ function validateForm()
             var country = document.getElementById("country").value;
             if ( country == "Select Country")
             {
-                  document.getElementById("countryErr").innerHTML = " * Please Select Your Country ";
+                  errMessage("countryErr","* Please Select Your Country ");
                   f ++;
               }else{
-                      document.getElementById("countryErr").innerHTML = "";
+                      errMessage("countryErr", "");
                       
                       
                     }
@@ -114,10 +114,10 @@ function validateForm()
             var gen = document.forms["RegForm"]["Gender"].value;
             if (gen == "")
             {
-                document.getElementById("genderErr").innerHTML = " * Please Select Your Gender";
+                errMessage("genderErr" , " * Please Select Your Gender");
                 f ++;
             }else{
-                      document.getElementById("genderErr").innerHTML = "";
+                       errMessage("genderErr" , "");
             }
                      
   // only to get f counter value                
@@ -138,6 +138,9 @@ function validateForm()
 
 }
 
+function errMessage(id,msg){
+  document.getElementById(id).innerHTML= msg;
+}
 
 
 function resetForm(){
